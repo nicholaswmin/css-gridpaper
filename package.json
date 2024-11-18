@@ -9,6 +9,9 @@
     "start": "npx --yes http-server",
     "test": "node --test"
   },
+  "engines": {
+    "node": ">=23"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicholaswmin/css-gridpaper.git"
