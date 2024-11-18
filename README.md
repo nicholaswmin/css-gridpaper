@@ -1,3 +1,5 @@
+[![tests:unit](https://github.com/nicholaswmin/css-gridpaper/actions/workflows/tests:unit.yml/badge.svg)](https://github.com/nicholaswmin/css-gridpaper/actions/workflows/tests:unit.yml)
+
 `<css-gridpaper>`
 
 Draws the exact same grid as [Gridlover][gridlover], the 
