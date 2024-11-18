@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The visual demo page of a web-component">
+
+    <title>css-gridpaper demo</title>
+  </head>
+  <body>
+    &emsp;
+    <h3>
+     <code>&#60;css-gridpaper&#62;</code>
+    </h3>
+    &emsp;
+    <p>
+      <a href="https://github.com/nicholaswmin/css-gridpaper">
+        View on Github
+      </a>
+    </p>
+    &emsp;
+    <p>
+      <strong>Warning:</strong>
+      This page is used by the automated test suite.
+      Edit/delete with caution.
+    </p>
+    &emsp;
+    
+    <p>
+      This is the visual demo page of <code>&#60;css-gridpaper&#62;</code>,
+      a native WebComponent which draws an adaptive typographic grid as
+     the page background, meant to be used a helper for constructing
+     vertical rhythms, layouts etc..
+    </p>
+    &emsp;
+    <p>
+      If all went well, you should see blue gridlines between the text
+      lines you're currently reading.
+    </p>
+    
+    &emsp;
+
+    <h3> Using this demo </h3>    
+    <p>
+      Use the bottom controls to alter the <code>font-size</code> and
+      the <code>line-height</code>.
+      &emsp;
+    </p>
+    
+    &emsp;
+    <h3> What to expect </h3>
+    <p>
+      This paragraph text and the grid should scale proportionally.
+    </p>
+
+    <p>
+      As a result, this paragraph text should always end up vertically aligned 
+      <em>between</em> the grid lines, without intersecting them.
+    </p>
+  </body>
+  
+  <!-- <css-gridpaper> setup --->
+  <style>      
+    :root {
+      --base-size: 15px;
+      --line-height: 1.5;
+    }
+
+    html, body, a, p, h1, h2, h3, h4, h5, h6  {
+      font-size: var(--base-size);  
+      line-height: var(--line-height);
+    }
+  </style>
+  <css-gridpaper 
+      size-prop="--base-size" 
+      scale-prop="--line-height"
+      color="rgba(0, 120, 180, 0.2)">
+  </css-gridpaper>
+  
+  <script type="module"> import './css-gridpaper.js' </script>
+  
+  <!-- Demo Controls  --->
+  <aside>
+    <label for="base-size">
+      <code>--base-size</code>
+    </label>
+    <input type="range" 
+      id="base-size" name="base-size" 
+      min="10" max="40" value="20" step="1"
+      oninput="updateCSSVariable(this, 'px')"/>
+
+    <label for="line-height">
+      <code>--line-height</code>
+    </label>
+    <input type="range" 
+      id="line-height" name="line-height" 
+      min="1.1" max="10" value="1.5" step="0.1"
+      oninput="updateCSSVariable(this)"/>
+  </aside>
+  
+  <style>      
+    html, body, p, h1, h2, h3, h4, h5, h6  {
+     margin-top: 0; margin-bottom: 0; padding: 0; 
+    }
+    
+    body { width: 70ch; margin: auto; padding: 0 12px; }
+    code { font-size: 85%; color: maroon; }
+    aside {
+      position: fixed;
+      font-size: 14px; bottom: 0; left: 0; right: 0;
+      margin: 14px auto; width: fit-content; 
+      line-height: 14px;
+      background: #fff; padding: 12px 32px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 
+                  0 3px 6px rgba(0,0,0,0.23);
+      input { padding: 6px; margin: 6px; }
+      label, input { display: block; }
+    }
+  </style>
+
+  <script>    
+    window.updateCSSVariable = ({ id, value }, unit = '') => {
+      document.documentElement.style.setProperty('--' + id, value + unit)  
+      
+      // The grid is automatically redrawn because it listens for
+      // `change` & `input` events on `window`.
+    }
+  </script>
+</html>

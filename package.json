@@ -1,0 +1,31 @@
+{
+  "name": "css-gridpaper",
+  "version": "0.1.0",
+  "description": "simple and adaptive typography grid",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "npx --yes http-server",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholaswmin/css-gridpaper.git"
+  },
+  "keywords": [
+    "grid",
+    "typography",
+    "web-components",
+    "vertical-rhythm"
+  ],
+  "author": "@nicholaswmin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholaswmin/css-gridpaper/issues"
+  },
+  "homepage": "https://github.com/nicholaswmin/css-gridpaper#readme",
+  "devDependencies": {
+    "puppeteer": "^23.8.0"
+  }
+}
