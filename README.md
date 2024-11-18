@@ -2,14 +2,13 @@
 
 `<css-gridpaper>`
 
-Draws the exact same grid as [Gridlover][gridlover], the 
-modular-scale/vertical-rhythm design tool.
+Draws an adaptive grid as a page background.
 
-I use it to debug vertical-rhythm formulas; 
-That design tool is used as the reference implementation so its 
-supposed to be a pixel-perfect match between the 2.
+It's a pixel-perfect match of the same grid that [Gridlover][gridlover] 
+uses, the modular-scale/vertical-rhythm design tool.  
+I use it to tweak vertical-rhythm formulas.
 
-It (might) also [redraw automatically](#redrawing-the-grid), 
+It [redraws automatically](#redrawing-the-grid), 
 depending on use-case.
 
 ## install
